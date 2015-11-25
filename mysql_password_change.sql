@@ -1,0 +1,1 @@
+SET PASSWORD FOR 'webdevjl'@'localhost' = PASSWORD('jUL%C9%15');
