@@ -5,5 +5,5 @@ PROJECT_NAME=$1
 echo $PROJECT_NAME
 DB_INIT_SH=$PROJECT_NAME"/Database/Scripts"
 echo "Database shell script is found in "$DB_INIT_SH
-chmod $DB_INIT_SH/db_init_on_server.sh
+chmod +x $DB_INIT_SH/db_init_on_server.sh
 sh $DB_INIT_SH/db_init_on_server.sh
