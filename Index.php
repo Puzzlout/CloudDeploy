@@ -1,19 +1,27 @@
 <?php
 require_once("Core/HelperFunctions.php");
     const AppNameConst = "AppName";
+    const C9UsernameConst = "C9Username";
     const SubmittedConst = "Submitted";
     $errorMessage = $successMessage = "";
     $dataIsSubmitted = isset($_POST[SubmittedConst]);
     $appNameSet = isset($_POST[AppNameConst]) && !empty($_POST[AppNameConst]);
+    $usernameSet = isset($_POST[C9UsernameConst]) && !empty($_POST[C9UsernameConst]);
     LogData('$dataIsSubmitted', $dataIsSubmitted);
     LogData('$appNameSet', $appNameSet);
+    LogData('$usernameSet', $usernameSet);
     if($dataIsSubmitted && !$appNameSet) {
         $errorMessage = '<div class="error">The application to deploy must be given</div>';
         $hasError = true;
     } 
-    if($dataIsSubmitted && $appNameSet) {
+    if($dataIsSubmitted && !$usernameSet) {
+        $errorMessage .= '<div class="error">The C9 username must be given</div>';
+        $hasError = true;
+    } 
+    if($dataIsSubmitted && $appNameSet && $usernameSet) {
         $appName =  $_POST[AppNameConst];
-        $successMessage = '<div class="success">'. $appName .'</div>';
+        $username = $_POST[C9UsernameConst];
+        $successMessage = '<div class="success">The username => ' . $username . ' ; the app => '. $appName .'</div>';
         require_once("Core/Process.php");
     }
 ?>
@@ -50,7 +58,8 @@ require_once("Core/HelperFunctions.php");
         }
     ?>
     <form method="POST" action="Index.php" >
-        <input type="text" name="<?php echo AppNameConst; ?>"/>
+        <input type="text" name="<?php echo C9UsernameConst; ?>" placeholder="<?php echo C9UsernameConst; ?>"/>
+        <input type="text" name="<?php echo AppNameConst; ?>" placeholder="<?php echo AppNameConst; ?>"/>
         <input type="text" name="<?php echo SubmittedConst; ?>" value="1" hidden/>
         <input type="submit" value="Deploy"/>
     </form>
