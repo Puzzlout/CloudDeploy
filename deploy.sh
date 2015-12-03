@@ -1,4 +1,6 @@
-MY_USERNAME = "webdevjl" #To input in a php script
+#$1 => the c9 username
+#$2 => the application name to load and configure
+MY_USERNAME=$1
 echo "Install MySQL"
 mysql-ctl install
 echo "Finished installing Mysql"
@@ -11,4 +13,4 @@ echo "Mysql server launched."
 git clone https://github.com/WebDevJL/EasyMvc.git
 echo "Configuring MySQL and setting up the project database..."
 chmod +x mysql_configure.sh
-sh mysql_configure.sh $1
+sh mysql_configure.sh $2
