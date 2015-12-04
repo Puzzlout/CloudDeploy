@@ -3,9 +3,9 @@
 #echo "Setting password for mysql root user..."
 #mysql SET @mysql_user = $1; \. CloudDeploymentManager/mysql_password_change.sql
 echo "Executing the database initialization..."
-PROJECT_NAME=$2
-echo $PROJECT_NAME
-DB_INIT_SH=$PROJECT_NAME"/Database/Scripts"
-echo "Database shell script is found in "$DB_INIT_SH
-chmod +x $DB_INIT_SH/db_init_on_server.sh
-sh $DB_INIT_SH/db_init_on_server.sh
+echo "... for project "$2
+DB_INIT_FOLDER=$2"/Database/Scripts/"
+DB_INIT_SH=$DB_INIT_FOLDER"db_init_on_server.sh"
+echo "Database shell script is found in shell script: "$DB_INIT_SH
+chmod +x $DB_INIT_SH
+sh $DB_INIT_SH $1 $DB_INIT_FOLDER
