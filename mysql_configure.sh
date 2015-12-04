@@ -1,7 +1,7 @@
 #$1 => the c9 username
 #$2 => the application name to load and configure
-echo "Setting password for mysql root user..."
-mysql SET @mysql_user = $1; .\ mysql_password_change.sql
+#echo "Setting password for mysql root user..."
+#mysql SET @mysql_user = $1; \. CloudDeploymentManager/mysql_password_change.sql
 echo "Executing the database initialization..."
 PROJECT_NAME=$2
 echo $PROJECT_NAME
