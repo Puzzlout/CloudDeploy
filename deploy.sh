@@ -11,5 +11,7 @@ mysql-ctl start
 echo "Mysql server launched."
 git clone https://github.com/$1/$2.git
 echo "Configuring MySQL and setting up the project database..."
-chmod +x CloudDeploymentManager/mysql_configure.sh
-sh CloudDeploymentManager/mysql_configure.sh $1 $2
+echo "Go to https://remotecoding-webdevjl.c9users.io/phpmyadmin and run the mysql_password_change.sql"
+echo "Then run "$2"/Database/Scripts/db_reset.sql"
+#chmod +x CloudDeploymentManager/mysql_configure.sh
+#sh CloudDeploymentManager/mysql_configure.sh $1 $2
