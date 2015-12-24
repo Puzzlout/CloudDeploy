@@ -2,6 +2,7 @@
 #$2 => the application name to load and configure
 echo "Setting password for mysql root user:"
 echo "SET PASSWORD FOR 'webdevjl'@'%' = PASSWORD('jUL%C9%15');"
+echo "Change host from ANY (%) to LOCAL (localhost)"
 #mysql SET @mysql_user = $1; \. CloudDeploymentManager/mysql_password_change.sql
 #echo "Executing the database initialization..."
 #echo "... for project "$2
