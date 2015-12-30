@@ -4,8 +4,11 @@ echo "Updating the System..."
 sudo apt-get update
 echo "Updating mcrypt..."
 sudo apt-get install libmcrypt-dev
-echo "Upgrading PHP version... to 5.6!"
-chmod +x CloudDeploymentManager/php-upgrade.sh
+echo "Making php-upgrade script executable..."
+chmod +x ~/workspace/CloudDeploymentManager/php-upgrade.sh
+echo "~/workspace/CloudDeploymentManager/php-upgrade.sh is executable!"
+chmod +x ~/workspace/CloudDeploymentManager/php-upgrade-7.0.1.sh
+echo "~/workspace/CloudDeploymentManager/php-upgrade-7.0.1.sh is executable!"
 echo "Installing MySQL"
 mysql-ctl install
 echo "Finished installing Mysql"
