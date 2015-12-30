@@ -13,3 +13,4 @@ phpbrew update
 phpbrew --debug install 5.6.10 as 5.6-dev +default
 phpbrew switch php-5.6.10
 phpbrew use php-5.6.10
+php -v
