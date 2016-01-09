@@ -11,6 +11,7 @@ phpbrew lookup-prefix homebrew
 phpbrew update
 # Avoid 5.6.16 ==> is crashing!
 phpbrew --debug install 5.6.10 as 5.6-dev +default
+source ~/.phpbrew/bashrc
 phpbrew switch php-5.6.10
-phpbrew use php-5.6.10
+phpbrew use 5.6-dev
 php -v

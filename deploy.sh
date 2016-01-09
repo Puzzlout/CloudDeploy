@@ -18,6 +18,7 @@ echo "Finished phpMyAdmin"
 echo "Starting Mysql server..."
 mysql-ctl start
 echo "Mysql server launched."
+git clone https://github.com/$1/$2.git
 #git clone https://github.com/$1/$2.git
 #echo "Configuring MySQL and setting up the project database..."
 #chmod +x CloudDeploymentManager/mysql_configure.sh
