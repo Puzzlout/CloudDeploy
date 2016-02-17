@@ -1,5 +1,5 @@
 #$1 => the c9 username
-#$2 => the application name to load and configure
+#$2 => the application names to load and configure
 echo "Updating the System..."
 sudo apt-get update
 echo "Updating mcrypt..."
@@ -18,8 +18,8 @@ echo "Finished phpMyAdmin"
 echo "Starting Mysql server..."
 mysql-ctl start
 echo "Mysql server launched."
-git clone https://github.com/$1/$2.git
-#git clone https://github.com/$1/$2.git
+cd GitHelpers
+bash git_clone.sh $1 $2
 #echo "Configuring MySQL and setting up the project database..."
 #chmod +x CloudDeploymentManager/mysql_configure.sh
 #sh CloudDeploymentManager/mysql_configure.sh $1 $2
