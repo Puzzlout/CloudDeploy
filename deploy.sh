@@ -18,8 +18,9 @@ echo "Finished phpMyAdmin"
 echo "Starting Mysql server..."
 mysql-ctl start
 echo "Mysql server launched."
-cd GitHelpers
-bash git_clone.sh $1 $2
+echo "PHP My Admin => https://over-e-webdevjl.c9users.io/phpmyadmin with root/{blank} credentials"
+#cd GitHelpers
+#bash git_clone.sh $1 $2
 #echo "Configuring MySQL and setting up the project database..."
 #chmod +x CloudDeploymentManager/mysql_configure.sh
 #sh CloudDeploymentManager/mysql_configure.sh $1 $2
