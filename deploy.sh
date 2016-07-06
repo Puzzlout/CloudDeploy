@@ -4,6 +4,8 @@ echo "Updating the System..."
 sudo apt-get update
 echo "Updating mcrypt..."
 sudo apt-get install libmcrypt-dev
+echo "Instal cUrl"
+sudo apt-get install libcurl4-gnutls-dev
 echo "Making php-upgrade script executable..."
 chmod +x ~/workspace/CloudDeploymentManager/php-upgrade.sh
 echo "~/workspace/CloudDeploymentManager/php-upgrade.sh is executable!"
