@@ -10,3 +10,4 @@ php bin/console doctrine:schema:update --force
 echo "IMPORTANT: Admin user created with user admin, pass admin"
 php bin/console fos:user:create admin admin@admin.com admin --super-admin
 php bin/console assets:install --env=$1 --symlink
+php bin/console cache:warmup --env=$1
