@@ -1,4 +1,5 @@
-# $1 ==> the php version
+# http://phpbrew.github.io/phpbrew/
+# https://community.c9.io/t/phpbrew-on-php-workspaces/621
 curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
 chmod +x phpbrew
 sudo mv phpbrew /usr/local/bin/phpbrew
@@ -8,9 +9,10 @@ vim ~/.bashrc
 # Paste this: [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 phpbrew lookup-prefix homebrew
 phpbrew self-update
-phpbrew --debug install $1 +default+apxs2+mysql
+# Avoid 5.6.16 ==> is crashing!
+phpbrew --debug install 5.6.10 as 5.6-dev +default
 source ~/.phpbrew/bashrc
-phpbrew switch $1
-phpbrew use $1
-phpbrew ext install curl
+phpbrew lookup-prefix homebrew
+phpbrew switch 5.6.10
+phpbrew use 5.6-dev
 php -v
