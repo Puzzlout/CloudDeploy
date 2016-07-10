@@ -1,4 +1,5 @@
 #$1 dev or prod
+cd ~/workspace/public
 git pull
 echo "Run composer..."
 composer install
