@@ -8,10 +8,11 @@ vim ~/.bashrc
 # Paste this: [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 #phpbrew lookup-prefix homebrew
 sudo phpbrew self-update
-sudo chmod -R oga+rw /usr/lib/apache2/modules
-sudo chmod -R oga+rw /etc/apache2
-phpbrew --debug install $1 +default+apxs2+mysql
-source ~/.phpbrew/bashrc
+sudo chmod oga+rw /usr/lib/apache2/modules
+sudo chmod -R oga+rw /etc/apache2/
+phpbrew -d install $1 +default +mysql +apxs2
+sudo chmod og-w /usr/lib/apache2/modules
+sudo chmod -R og-w /etc/apache2/source ~/.phpbrew/bashrc
 phpbrew switch $1
 phpbrew use $1
 phpbrew ext install curl
