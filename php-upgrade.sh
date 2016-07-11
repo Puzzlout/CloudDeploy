@@ -12,7 +12,8 @@ sudo chmod oga+rw /usr/lib/apache2/modules
 sudo chmod -R oga+rw /etc/apache2/
 phpbrew -d install $1 +default +mysql +apxs2
 sudo chmod og-w /usr/lib/apache2/modules
-sudo chmod -R og-w /etc/apache2/source ~/.phpbrew/bashrc
+sudo chmod -R og-w /etc/apache2/
+source ~/.phpbrew/bashrc
 phpbrew switch $1
 phpbrew use $1
 phpbrew ext install curl
