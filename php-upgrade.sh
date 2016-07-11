@@ -5,8 +5,13 @@ sudo mv phpbrew /usr/local/bin/phpbrew
 phpbrew -v
 phpbrew init
 vim ~/.bashrc
-# Paste this: [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-#phpbrew lookup-prefix homebrew
+export PHPBREW_SET_PROMPT=1
+export PHPBREW_RC_ENABLE=1
+# Paste this: 
+#   [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# and
+#   source /home/ubuntu/.phpbrew/bashrc
+#
 sudo phpbrew self-update
 sudo chmod oga+rw /usr/lib/apache2/modules
 sudo chmod -R oga+rw /etc/apache2/
