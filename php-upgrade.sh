@@ -18,8 +18,8 @@ sudo chmod -R oga+rw /etc/apache2/
 sudo chmod -R oga+rw /var/lib/apache2/module/enabled_by_admin
 phpbrew -d install $1 +default +mysql +apxs2
 source ~/.phpbrew/bashrc
-phpbrew switch php-$1
-phpbrew use php-$1
+phpbrew switch $1
+phpbrew use $1
 phpbrew ext install curl
 cp /etc/apache2/mods-available/php5.conf /etc/apache2/mods-available/php7.conf
 ln -s /etc/apache2/mods-available/php7.conf /etc/apache2/mods-enabled/php7.conf
