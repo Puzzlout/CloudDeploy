@@ -4,7 +4,8 @@ chmod +x phpbrew
 sudo mv phpbrew /usr/local/bin/phpbrew
 phpbrew -v
 phpbrew init
-vim ~/.bashrc
+echo "[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc" >> ~/.bashrc
+#vim ~/.bashrc
 export PHPBREW_SET_PROMPT=1
 export PHPBREW_RC_ENABLE=1
 # Paste this: 
