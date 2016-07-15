@@ -1,4 +1,5 @@
 #$1 dev or prod
+cd ~/workspace/api/
 rm -R var/cache
 rm -R var/sessions
 rm var/bootstrap.php.cache
