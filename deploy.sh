@@ -18,4 +18,4 @@ echo "Finished phpMyAdmin"
 echo "Starting Mysql server..."
 mysql-ctl start
 echo "Mysql server launched."
-echo "PHP My Admin => https://over-e-webdevjl.c9users.io/phpmyadmin with root/{blank} credentials"
+echo "PHP My Admin => https://{{workspace name}}-{{c9 username}}.c9users.io/phpmyadmin with root/{blank} credentials"
