@@ -4,6 +4,7 @@ cd /www/sites/api/
 rm -R var/cache
 rm -R var/sessions
 rm var/bootstrap.php.cache
+git reset --hard HEAD
 git pull
 git checkout tags/$2 -b v$2
 composer update
