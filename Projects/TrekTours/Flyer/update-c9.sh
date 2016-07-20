@@ -1,9 +1,10 @@
-#$1 dev or prod
-cd /www/sites/public
+# Input $1: dev or prod
+# Input $2: the git tag to release
+cd ~/workspace/public/
 rm -R var/cache
 rm -R var/sessions
 rm var/bootstrap.php.cache
-git pull
+git checkout tags/$2 -b v$2
 mysql-ctl start
 composer update
 bower update
