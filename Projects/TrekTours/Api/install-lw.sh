@@ -1,6 +1,6 @@
 #$1 dev or prod
 #$2 path
-cd /home/puzzlout/public_html/$2/api/"
+cd "/home/puzzlout/public_html/$2/api"
 git pull
 echo "Run composer..."
 composer install
