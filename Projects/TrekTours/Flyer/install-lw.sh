@@ -1,5 +1,6 @@
 #$1 dev or prod
-cd /home/puzzlout/public_html/trektours/public
+#$2 path
+cd "/home/puzzlout/public_html/$2/public"
 git pull
 echo "Run composer..."
 composer install
