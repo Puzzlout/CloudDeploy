@@ -4,7 +4,7 @@
 # Input $1: dev or prod
 # Input $2: the deploy folder
 ################################################################################
-cd "$2/api/"
+cd api/
 git pull
 echo "Run composer..."
 composer install
