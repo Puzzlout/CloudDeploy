@@ -14,7 +14,7 @@ echo "Run composer..."
 composer install
 composer update
 bower -v
-if ($(!!) === "-bash: bower: command not found")
+if [ "$(!!)" == "-bash: bower: command not found" ]
 	echo "Bower is not installed! Installing..."
 	sudo npm install -g bower
 fi
