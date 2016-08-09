@@ -8,7 +8,7 @@
 #	> c9: a Cloud9 workspace
 #	> lw: a LiquidWeb Storm VPS
 ################################################################################
-cd "$2/public"
+cd public/
 git pull
 echo "Run composer..."
 composer install
