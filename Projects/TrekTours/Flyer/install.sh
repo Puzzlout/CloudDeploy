@@ -3,13 +3,21 @@
 # 
 # Input $1: dev or prod
 # Input $2: the deploy folder
+# Input $2: the target server:
+# 	> local
+#	> c9: a Cloud9 workspace
+#	> lw: a LiquidWeb Storm VPS
 ################################################################################
 cd "$2/public"
 git pull
 echo "Run composer..."
 composer install
 composer update
-sudo npm install -g bower
+bower -v
+if ($(!!) === "-bash: bower: command not found")
+	echo "Bower is not installed! Installing..."
+	sudo npm install -g bower
+fi
 echo "Run bower..."
 bower install
 bower update
