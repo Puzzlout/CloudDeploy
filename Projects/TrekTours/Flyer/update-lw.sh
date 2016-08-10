@@ -1,6 +1,7 @@
 # Input $1: dev or prod
 # Input $2: the git tag to release
-cd /home/puzzlout/public_html/trektours/public/
+# Input $3: directory
+cd /home/puzzlout/public_html/$3/public/
 rm -R var/cache
 rm -R var/sessions
 rm var/bootstrap.php.cache
