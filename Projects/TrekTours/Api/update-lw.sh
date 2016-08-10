@@ -12,3 +12,5 @@ php bin/console doctrine:schema:update --dump-sql
 php bin/console doctrine:schema:update --force
 php bin/console assets:install --env=$1 --symlink
 php bin/console cache:warmup --env=$1
+chown -R puzzlout /home/puzzlout/public_html/$3/
+chmod -R 755 /home/puzzlout/public_html/$3/

@@ -15,3 +15,5 @@ php bin/console lexik:translations:import AppBundle --cache-clear
 php bin/console assets:install --env=$1 --symlink
 php bin/console assetic:dump --env=$1 --no-debug
 php bin/console cache:warmup --env=$1
+chown -R puzzlout /home/puzzlout/public_html/$3/
+chmod -R 755 /home/puzzlout/public_html/$3/
