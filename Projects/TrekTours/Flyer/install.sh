@@ -10,6 +10,8 @@
 ################################################################################
 cd public/
 git pull
+last_release=$(git describe --tags)
+git checkout tags/$last_release -b v$last_release
 echo "Run composer..."
 composer install
 composer update
