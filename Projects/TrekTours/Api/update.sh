@@ -1,6 +1,7 @@
 # Input $1: dev or prod
 # Input $2: the git tag to release
-cd /www/sites/api/
+# Input $3: full absolute path to directory
+cd $3/api
 rm -R var/cache
 rm -R var/sessions
 rm var/bootstrap.php.cache
