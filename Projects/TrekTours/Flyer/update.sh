@@ -9,6 +9,7 @@ git reset --hard HEAD
 git pull
 git checkout tags/$2 -b v$2
 composer update
+sed -i "/release_version_tag:/c\release_version_tag: 'v$2'" app/config/parameters.yml
 bower update
 php bin/console cache:clear --env=$1
 php bin/console doctrine:schema:update --dump-sql
