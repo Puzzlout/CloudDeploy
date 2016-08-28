@@ -7,14 +7,21 @@
 # 	> local
 #	> c9: a Cloud9 workspace
 #	> lw: a LiquidWeb Storm VPS
+# Input $4: use local composer.phar => 0 (false) or 1 (true)
 ################################################################################
 cd public/
 git pull
 last_release=$(git describe --tags)
 git checkout tags/$last_release -b v$last_release
 echo "Run composer..."
-composer install
-composer update
+if [ $4 = "1" ]
+then
+    sh/composer.phar install
+    sh/composer.phar update
+else
+    composer install
+    composer update
+fi
 if [ $(bower -v | tail -1) == "-bash: bower: command not found" ]
     then
 	echo "Bower is not installed! Installing..."

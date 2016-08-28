@@ -1,6 +1,11 @@
+################################################################################
+#
 # Input $1: dev or prod
 # Input $2: the git tag to release
 # Input $3: full absolute path to directory
+# Input $4: use local composer.phar => 0 (false) or 1 (true)
+################################################################################
+
 cd $3/public
 rm -R var/cache
 rm -R var/sessions
@@ -8,7 +13,12 @@ rm var/bootstrap.php.cache
 git reset --hard HEAD
 git pull
 git checkout tags/$2 -b v$2
-composer update
+if [ $4 = "1" ]
+then
+    sh/composer.phar update
+else
+    composer update
+fi
 sed -i "/release_version_tag:/c\    release_version_tag: 'v$2'" app/config/parameters.yml
 bower update
 php bin/console cache:clear --env=$1
